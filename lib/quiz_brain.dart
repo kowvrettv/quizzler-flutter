@@ -1,7 +1,7 @@
 import 'package:quizzler/question.dart';
 
 class QuizBrain {
-  int _questionNumber = 0;
+  int _questionNumber = 0; // номер вопроса ( _ значит приватный)
 
   List<Question> _questionBank = [
     Question('Some cats are actually allergic to humans', true),
@@ -31,17 +31,34 @@ class QuizBrain {
         true),
   ];
 
+  // проверка количества вопросов в соотношении к счетчику
   void nextQuestion() {
     if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
     }
   }
 
+  // изолированно берем текст вопроса
   String getQuestionText() {
     return _questionBank[_questionNumber].questionText;
   }
 
+  //изолированно берем ответ
   bool getCorrectAnswer() {
     return _questionBank[_questionNumber].questionAnswer;
+  }
+
+  // проверяем последний вопрос или нет
+  bool isFinished() {
+    if (_questionNumber >= _questionBank.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // сбрасываем значение счетчика
+  void reset() {
+    _questionNumber = 0;
   }
 }
