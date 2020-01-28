@@ -43,7 +43,7 @@ class QuizBrain {
     return _questionBank[_questionNumber].question;
   }
 
-  //изолированно берем ответ
+  // изолированно берем ответ
   bool getCorrectAnswer() {
     return _questionBank[_questionNumber].answer;
   }
