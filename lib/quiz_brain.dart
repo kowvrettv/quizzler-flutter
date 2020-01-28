@@ -40,12 +40,12 @@ class QuizBrain {
 
   // изолированно берем текст вопроса
   String getQuestionText() {
-    return _questionBank[_questionNumber].questionText;
+    return _questionBank[_questionNumber].question;
   }
 
   //изолированно берем ответ
   bool getCorrectAnswer() {
-    return _questionBank[_questionNumber].questionAnswer;
+    return _questionBank[_questionNumber].answer;
   }
 
   // проверяем последний вопрос или нет
